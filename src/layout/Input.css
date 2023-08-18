@@ -1,0 +1,23 @@
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+}
+
+.input-label {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.input-field {
+  padding: 1.5rem;
+  width: 50rem;
+  font-family: inherit;
+  color: #555;
+  font-weight: 400;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}

@@ -1,0 +1,25 @@
+.textarea-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+}
+
+.textarea-label {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.textarea {
+  padding: 1.5rem;
+  width: 50rem;
+  height: 20rem;
+  font-family: inherit;
+  color: #555;
+  font-weight: 400;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  margin-bottom: 5rem;
+  resize: none;
+}

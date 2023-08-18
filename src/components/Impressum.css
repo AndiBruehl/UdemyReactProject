@@ -1,0 +1,59 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
+
+/* Global styling */
+body {
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(137deg, rgba(2, 2, 20, 1) 31%, rgba(5, 47, 96, 1) 64%, rgba(119, 85, 183, 1) 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent background scrolling */
+}
+
+/* Sticky link styling */
+.sticky-link {
+  position: fixed; /* Change to fixed for corner positioning */
+  top: 20px; /* Adjust top positioning */
+  left: 20px; /* Adjust left positioning */
+  padding: 10px 20px;
+  z-index: 1;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  font-size: 18px; /* Adjust font size for readability */
+}
+
+/* Rest of your CSS */
+.impressum-container {
+  padding: 20px;
+  overflow-y: auto; /* Allow container to be scrolled */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+  height: 800px; /* Adjust container height to fit viewport */
+  margin-top: -80px; /* Add margin top */
+  border-radius: 20px;
+}
+
+.impressum-content {
+  max-width: 1000px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.impressum-content h1 {
+  font-size: 30px; /* Increase font size for headings */
+  margin-bottom: 20px;
+}
+
+.impressum-content p {
+  margin-bottom: 15px; /* Reduce margin between paragraphs for better readability */
+  line-height: 1.6;
+  font-size: 16px; /* Increase font size for content text */
+}

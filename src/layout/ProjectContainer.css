@@ -1,0 +1,9 @@
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5rem;
+  row-gap: 5rem;
+  margin-left: 1940px;
+  max-width: 600px;
+  margin-top: 125px;
+}

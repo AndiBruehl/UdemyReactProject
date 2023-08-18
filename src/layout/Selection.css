@@ -1,0 +1,23 @@
+.selection-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+}
+
+.selection-label {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.selection-field {
+  padding: 1.5rem;
+  width: 50rem;
+  font-family: inherit;
+  color: #555;
+  font-weight: 400;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  margin-bottom: 5rem;
+}

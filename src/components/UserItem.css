@@ -1,0 +1,21 @@
+.user {
+  background-color: azure;
+}
+
+.useritem {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  margin: 5rem 0rem 0rem 3rem;
+}
+
+.useritem-img {
+  width: 20%;
+  border-radius: 100%;
+}
+
+.useritem-name {
+  font-size: 2.6rem;
+  font-weight: 500;
+}

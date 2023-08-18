@@ -1,0 +1,57 @@
+.projectitem-title {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+.projectitem-subtitle {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #aaa;
+}
+
+.projectitem {
+  cursor: pointer;
+}
+
+.projectitem-text {
+  margin-top: 2.6rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.projectitem-divider {
+  background-color: #ccc;
+  height: 2px;
+  width: auto;
+  margin-top: 1.8rem;
+}
+
+.projectitem-task-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-top: 0.8rem;
+}
+
+.projectitem-task-container {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  margin-top: 1rem;
+  width: 300px
+}
+
+.projectitem-task-container img {
+  width: 12%;
+  border-radius: 100%;
+}
+
+.projectitem-task-container p {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.projectitem-text{
+  font-weight: 500;
+  font-size: 2rem;
+}

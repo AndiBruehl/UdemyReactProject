@@ -1,0 +1,13 @@
+.filteritem {
+  font-weight: 500;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+.active {
+  color: #3400d1;
+}
+
+.inactive {
+  color: #aaa;
+}
