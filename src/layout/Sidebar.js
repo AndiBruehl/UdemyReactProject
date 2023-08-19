@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboard } from '@fortawesome/free-regular-svg-icons';
 import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
 import { getAuth } from "firebase/auth";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
 
 import './SideBar.css'
@@ -10,20 +11,40 @@ import pImg from '../assets/profilePic.jpg'
 
 const SideBar = () => {
   const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
+  const [profilePic, setProfilePic] = useState(pImg);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    if (user) {
+      const db = getFirestore();
+      const userRef = doc(db, "users", user.uid);
+
+      getDoc(userRef)
+        .then((doc) => {
+          if (doc.exists()) {
+            const userData = doc.data();
+            setUserName(userData.name);
+
+            if (userData.profilePicture) {
+              setProfilePic(userData.profilePicture);
+            }
+          } else {
+            console.log("No user data found");
+          }
+        })
+        .catch((error) => {
+          console.error("Error getting user data:", error);
+        });
+    }
+  }, []);
 
   const logoutHandler = () => {
     const auth = getAuth();
     auth.signOut().then(() => navigate("/"));
   };
-
-  useEffect(() => {
-   
-    getAuth().onAuthStateChanged((user) => {
-      if (!user) {
-        navigate("/login");
-      }
-    });
-  }, [navigate]);
 
   return (
     <div className='sidebar'>
@@ -34,8 +55,8 @@ const SideBar = () => {
         Abmelden
       </Link>
       <div className='user-profile'>
-        <img className='profile-img' alt="profilepic" src={pImg} />
-        <h3 className='username'>Dein Arbeitsbereich</h3>
+        <img className='profile-img' alt="profilepic" src={profilePic} />
+        <h3 className='username'>{userName}</h3>
       </div>
       <div className='divider'></div>
       <div className='sidebar-content'>

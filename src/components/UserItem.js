@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./UserItem.css";
-import img from "../assets/profilePic.jpg";
 import Modal from "react-modal";
 
 // Stil für das Modal
@@ -35,25 +34,25 @@ const UserItem = (props) => {
 
   return (
     <div className="user">
-    <div className="useritem">
-      <img className="useritem-img" src={img} alt={props.user.displayName} />
-      <p className="useritem-name">
-        <span className="useritem-link" onClick={openModal} style={{ cursor: "pointer", textDecoration: "none" }}>
-          {props.user.displayName}
-        </span>
-      </p>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="User Details Modal"
-        style={modalStyles} // Übergebe den Stil an das Modal
-      >
-        <h2>{props.user.displayName}</h2>
-        <p>Email:</p>
-        <p> {props.user.email}</p>
-      </Modal>
+      <div className="useritem">
+        <img className="useritem-img" src={props.user.profilePictureURL || ""} alt={props.user.displayName} />
+        <p className="useritem-name">
+          <span className="useritem-link" onClick={openModal} style={{ cursor: "pointer", textDecoration: "none" }}>
+            {props.user.displayName}
+          </span>
+        </p>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="User Details Modal"
+          style={modalStyles} // Übergebe den Stil an das Modal
+        >
+          <h2>{props.user.displayName}</h2>
+          <p>Email:</p>
+          <p> {props.user.email}</p>
+        </Modal>
       </div>
-      </div>
+    </div>
   );
 };
 
