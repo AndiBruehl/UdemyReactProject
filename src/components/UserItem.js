@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 import "./UserItem.css";
-import Modal from "react-modal";
-import defaultProfilePicture from "../assets/profilePic.jpg"; // Import des Standardbildes
+import ReactModal from "react-modal";
+import defaultProfilePicture from "../assets/profilePic.jpg";
 
-// Stil für das Modal
 const modalStyles = {
   overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Hintergrund ausgrauen
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
   },
   content: {
     borderRadius: "20px",
-    width: "300px",
-    height: "150px",
+    width: "500px",
+    height: "200px",
     margin: "auto",
     textAlign: "center",
     padding: "20px",
-    fontSize: "20px", // Doppelt so große Schrift
+    fontSize: "20px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   },
 };
 
@@ -26,7 +28,9 @@ const UserItem = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
-    setModalIsOpen(true);
+    if (!modalIsOpen) {
+      setModalIsOpen(true);
+    }
   };
 
   const closeModal = () => {
@@ -45,16 +49,15 @@ const UserItem = (props) => {
             {props.user.displayName}
           </span>
         </p>
-        <Modal
+        <ReactModal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           contentLabel="User Details Modal"
-          style={modalStyles} // Übergebe den Stil an das Modal
+          style={modalStyles}
         >
           <h2>{props.user.displayName}</h2>
-          <p>Email:</p>
-          <p> {props.user.email}</p>
-        </Modal>
+          <p>Email: {props.user.email}</p>
+        </ReactModal>
       </div>
     </div>
   );

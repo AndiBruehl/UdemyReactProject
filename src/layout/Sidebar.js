@@ -7,7 +7,7 @@ import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
 
 import './SideBar.css'
-import pImg from '../assets/profilePic.jpg'
+import pImg from '../assets/profilePic1.png'
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ const SideBar = () => {
       </Link>
       <div className='user-profile'>
         <img className='profile-img' alt="profilepic" src={profilePic} />
-        <h3 className='username'>{userName}</h3>
+        <h3 className='username'>ProjectHub{userName}</h3>
       </div>
       <div className='divider'></div>
       <div className='sidebar-content'>
