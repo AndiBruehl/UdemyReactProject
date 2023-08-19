@@ -101,17 +101,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        color: "white",
-        fontSize: "24px",
-        paddingTop: "2rem"
-      }}
-    >
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", color: "white", fontSize: "24px", paddingTop: "2rem" }}>
       <Link to="/impressum" style={{ fontSize: "25px", position: "absolute", bottom: "5rem", left: "7.5rem", color: "white", textDecoration: "none" }}>
         Impressum
       </Link>
@@ -122,42 +112,34 @@ const SignUpPage = () => {
         <Input ref={emailRef} type="text">Email:</Input>
         <Input ref={passwordRef} type="password">Passwort (mindestens 6 Zeichen!):</Input>
         
-        {/* Container for image upload text */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "15px", textAlign: "center", color: "white" }}>
           <p style={{ fontSize: "1.5rem", marginBottom: "10px",  color: "white"  }}>Upload a profile picture:</p>
-          
-          {/* Hidden file input */}
           <input
             type="file"
             accept="image/*"
-                        onChange={handleProfilePictureChange}
+            onChange={handleProfilePictureChange}
             style={{ display: "none" }}
             ref={fileInputRef}
           />
-          
-          {/* Display selected file name */}
           {profilePicture && (
             <p style={{ fontSize: "1rem", marginBottom: "5px",  color: "white"}}>
               {profilePicture.name}
             </p>
           )}
-          
-          {/* Button to trigger file input */}
           <Button onClick={() => fileInputRef.current.click()} className="button">
             Choose Profile Picture
           </Button>
         </div>
         
-        {/* Use the same styling classes for the button */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "25px", textAlign: "center" }}>
+          <Button onClick={clickHandler} className="button"> Konto erstellen → </Button>
+        </div>
+        
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "25px" }}>
           <Button onClick={googleSignIn} className="button">
             <img src={GoogleLogo} alt="Google Logo" style={{ marginRight: "10px", height: "15px", width: "15px" }} />
             Sign in with Google
           </Button>
-        </div>
-        
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "25px" }}>
-          <Button onClick={clickHandler} className="button"> Konto erstellen → </Button>
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "15px" }}>
