@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./UserItem.css";
 import Modal from "react-modal";
+import defaultProfilePicture from "../assets/profilePic.jpg"; // Import des Standardbildes
 
 // Stil für das Modal
 const modalStyles = {
@@ -32,10 +33,13 @@ const UserItem = (props) => {
     setModalIsOpen(false);
   };
 
+  const profilePictureURL =
+    props.user.photoURL || props.user.profilePictureURL || defaultProfilePicture;
+
   return (
     <div className="user">
       <div className="useritem">
-        <img className="useritem-img" src={props.user.profilePictureURL || ""} alt={props.user.displayName} />
+        <img className="useritem-img" src={profilePictureURL} alt={props.user.displayName} />
         <p className="useritem-name">
           <span className="useritem-link" onClick={openModal} style={{ cursor: "pointer", textDecoration: "none" }}>
             {props.user.displayName}
